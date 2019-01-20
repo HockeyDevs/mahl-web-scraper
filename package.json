@@ -12,7 +12,8 @@
     "yarn": "1.13.0"
   },
   "workspaces": [
-    "mahl-web-scraper-ui"
+    "mahl-web-scraper-ui",
+    "mahl-web-scraper-backend"
   ],
   "scripts": {},
   "husky": {
