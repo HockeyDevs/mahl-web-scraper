@@ -1,11 +1,11 @@
-const path = require('path')
+import path from 'path'
 
-const express = require('express')
-const cookieParser = require('cookie-parser')
-const logger = require('morgan')
-const helmet = require('helmet')
+import express from 'express'
+import cookieParser from 'cookie-parser'
+import logger from 'morgan'
+import helmet from 'helmet'
 
-const indexRouter = require('./routes/index')
+import indexRouter from './routes/index'
 
 const app = express()
 
@@ -18,4 +18,4 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
 
-module.exports = app
+export default app
