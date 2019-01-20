@@ -32,5 +32,6 @@
   "devDependencies": {
     "jest-dom": "^3.0.0",
     "react-testing-library": "^5.4.4"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }

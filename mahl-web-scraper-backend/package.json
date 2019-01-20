@@ -1,0 +1,62 @@
+{
+  "name": "mahl-web-scraper-backend",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "copy-assets": "ts-node tools/copyAssets",
+    "lint": "tslint -c ../tslint.json -p tsconfig.json --fix",
+    "tsc": "tsc",
+    "build": "yarn run clean && yarn run lint && yarn run tsc && yarn run copy-assets",
+    "dev:start": "yarn run build && yarn run start",
+    "dev": "nodemon --watch src -e ts,ejs --exec yarn run dev:start",
+    "start": "node .",
+    "test": "jest --watch"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testMatch": ["<rootDir>/src/**/*.test.ts"],
+    "testPathIgnorePatterns": ["node_modules"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "helmet": "^3.15.0",
+    "morgan": "~1.9.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.1",
+    "@types/express": "^4.16.0",
+    "@types/fs-extra": "^5.0.4",
+    "@types/helmet": "^0.0.42",
+    "@types/jest": "^23.3.13",
+    "@types/morgan": "^1.7.35",
+    "@types/node": "^10.12.18",
+    "@types/shelljs": "^0.8.1",
+    "@types/supertest": "^2.0.7",
+    "fs-extra": "^7.0.1",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.9",
+    "rimraf": "^2.6.3",
+    "shelljs": "^0.8.3",
+    "supertest": "^3.4.1",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.4"
+  }
+}

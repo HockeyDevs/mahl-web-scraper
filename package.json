@@ -12,7 +12,8 @@
     "yarn": "1.13.0"
   },
   "workspaces": [
-    "mahl-web-scraper-ui"
+    "mahl-web-scraper-ui",
+    "mahl-web-scraper-backend"
   ],
   "scripts": {},
   "husky": {
@@ -22,7 +23,11 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
+      "eslint --fix --ignore-path .gitignore",
+      "git add"
+    ],
+    "*.ts": [
+      "tslint -c tslint.json --fix",
       "git add"
     ]
   },
@@ -37,6 +42,12 @@
     "husky": "^1.3.1",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
-    "pretty-quick": "^1.10.0"
+    "pretty-quick": "^1.10.0",
+    "tslint": "^5.12.1",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.4"
   }
 }
