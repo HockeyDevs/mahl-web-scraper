@@ -1,0 +1,42 @@
+{
+  "name": "mahl-web-scraper",
+  "version": "0.0.1",
+  "description": "MAHL's website is not great. Let's scrape the data from the site and create a better UI.",
+  "main": "index.js",
+  "repository": "git@github.com:HockeyDevs/mahl-web-scraper.git",
+  "author": "HockeyDevs",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": "11.7.0",
+    "yarn": "1.13.0"
+  },
+  "workspaces": [
+    "mahl-web-scraper-ui"
+  ],
+  "scripts": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.6.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "pretty-quick": "^1.10.0"
+  }
+}
